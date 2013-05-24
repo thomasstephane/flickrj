@@ -1,3 +1,8 @@
-<% @album.pictures.each do |picture| %>
-  <a href=<%="/albums/#{@album.id}/picture/#{picture.id}"%>><img src="<%=picture.picture_url%>"></a>
-<% end %>
+<div class="photo-album">
+
+  <h1><span><%= @album.name %></span></h1>
+
+  <% @album.pictures.each_with_index do |picture, index| %>
+  <a href=<%="/albums/#{@album.id}/picture/#{picture.id}"%> class="large polaroid img<%= (index + 1) % 15 %>" ><img src="<%=picture.picture_url%>"><%=picture.name%></a>
+  <% end %>
+</div>
