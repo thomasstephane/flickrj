@@ -1,0 +1,12 @@
+<div class="container">
+  <form action="/album" method="post">
+    <input type="text" name="name" required placeholder="Album name">
+    <input type="submit" name="submit" value="Create!">
+  </form>
+</div>
+
+
+
+<% @user.albums.each do |album| %>
+  <a href="/albums/<%=album.id%>"><%=album.name%></a>
+<% end %>
