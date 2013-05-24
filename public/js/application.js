@@ -13,6 +13,7 @@ $(document).ready(function() {
 
   $('input[value="Join Us!"]').on('click', function(e) {
     e.preventDefault();
+    console.log(this);
     $.ajax({
       type: 'post',
       url: '/signup',
